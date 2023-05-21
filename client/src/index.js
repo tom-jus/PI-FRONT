@@ -6,6 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { store } from '../src/redux/store';
 import { Provider } from "react-redux";
 import { BrowserRouter } from 'react-router-dom';
+import axios from 'axios';
+
+// Con esto le decimos a axios que todas las peticiones que haga empiecen con esa URL
+// axios.defaults.baseURL = 'http://localhost:3001';
+axios.defaults.baseURL = 'https://pi-back-production-bee8.up.railway.app/';
 
 // Renderizo la app
 ReactDOM.render(
