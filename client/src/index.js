@@ -10,7 +10,7 @@ import axios from 'axios';
 
 // Con esto le decimos a axios que todas las peticiones que haga empiecen con esa URL
 // axios.defaults.baseURL = 'http://localhost:3001';
-axios.defaults.baseURL = 'https://pi-back-production-bee8.up.railway.app/';
+axios.defaults.baseURL = 'https://pi-back-production-bee8.up.railway.app';
 
 // Renderizo la app
 ReactDOM.render(
