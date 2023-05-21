@@ -17,7 +17,7 @@ import {
 
 export const getAllVideoGames = () => {
     return async function (dispatch) {
-        let response = await axios.get(`http://localhost:3001/videogames`, {})
+        let response = await axios.get(`/videogames`, {})
         return dispatch({
             type: GET_ALL_VIDEOGAMES,
             payload: response.data
@@ -28,7 +28,7 @@ export const getAllVideoGames = () => {
 export const getDetailVideoGame = (id) => {
     return async function (dispatch) {
         try {
-            let response = await axios.get(`http://localhost:3001/videogames/${id}`);
+            let response = await axios.get(`/videogames/${id}`);
             return dispatch({
                 type: GET_VIDEOGAME_BY_ID,
                 payload: response.data
@@ -54,7 +54,7 @@ export const createVideoGame = (payload) => {
                 platforms,
                 genres
             } = payload;
-            let response = await axios.post(`http://localhost:3001/videogames`, {
+            let response = await axios.post(`/videogames`, {
                 name,
                 image,
                 description,
@@ -76,7 +76,7 @@ export const createVideoGame = (payload) => {
 export const getGenres = (payload) => {
     return async function (dispatch) {
         try {
-            let response = await axios.get(`http://localhost:3001/genres`, payload)
+            let response = await axios.get(`/genres`, payload)
             return dispatch({
                 type: GET_GENRES,
                 payload: response.data
@@ -121,7 +121,7 @@ export const getVideoGamesByOrigin = (payload) => {
 export const getVideogameByName = (name) => {
     return async function (dispatch) {
         try {
-            let response = await axios.get(`http://localhost:3001/videogames?name=${name}`)
+            let response = await axios.get(`/videogames?name=${name}`)
             return dispatch({
                 type: GET_VIDEOGAMES_BY_NAME,
                 payload: response.data
@@ -139,7 +139,7 @@ export const deleteVideoGame = (id) => {
     return async function (dispatch) {
         try {
             console.log(id)
-            let response = await axios.delete(`http://localhost:3001/videogames/${id}`)
+            let response = await axios.delete(`/videogames/${id}`)
             return dispatch({
                 type: DELETED_GAME,
                 payload: response.data
