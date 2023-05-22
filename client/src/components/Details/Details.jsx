@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styles from './Details.module.css'
 import { NavLink } from 'react-router-dom';
 
 //Actions
-import { getDetailVideoGame, deleteVideoGame } from '../../redux/actions';
+import { getDetailVideoGame } from '../../redux/actions';
 
 const Details = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const detailVideoGame = useSelector((state) => state.details);
 
     useEffect(() => {
@@ -19,16 +18,16 @@ const Details = () => {
 
 
 
-    const handleDeleteGame = (event) => {
-        event.preventDefault()
-        let result = window.confirm('Estas seguro que desea eliminar este juego?');
-        if (result === true) {
-            window.alert('Juego borrado con éxito');
-            dispatch(deleteVideoGame(id));
-            navigate('/home');
-            window.location.replace('');
-        }
-    };
+    // const handleDeleteGame = (event) => {
+    //     event.preventDefault()
+    //     let result = window.confirm('Estas seguro que desea eliminar este juego?');
+    //     if (result === true) {
+    //         window.alert('Juego borrado con éxito');
+    //         dispatch(deleteVideoGame(id));
+    //         navigate('/home');
+    //         window.location.replace('');
+    //     }
+    // };
 
     return (
         

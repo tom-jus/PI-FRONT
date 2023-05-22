@@ -1,5 +1,4 @@
 //REDUCER
-import { getAllVideoGames } from './actions';
 
 import {
     GET_ALL_VIDEOGAMES,
@@ -148,6 +147,7 @@ function rootReducer(state = initialState, action) {
                     videogames: filterMyGames
                 }
             };
+            break;
         case GET_VIDEOGAMES_BY_NAME:
             return {
                 ...state,

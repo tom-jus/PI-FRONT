@@ -49,7 +49,7 @@ const Home = () => {
         setCurrentPage(pageNumbers);
     };
     
-    const [isHiden, setIsHiden] = useState(false);
+    // const [isHiden, setIsHiden] = useState(false);
     const [search, setSearch] = useState({ // Input de busqueda
         name: '',
     });
